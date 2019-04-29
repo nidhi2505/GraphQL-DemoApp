@@ -2,11 +2,10 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-TestResults/
-Packages/
-.vs/
-/GraphQl.DotNetCore.MyApp/bin/
-/GraphQl.DotNetCore.MyApp/obj/
+
+.vs
+GraphQl.DotNetCore.MyApp/bin/
+GraphQl.DotNetCore.MyApp/obj/
 *.obj
 *.exe
 *.pdb
@@ -20,3 +19,5 @@ Packages/
 *.suo
 *.tlb
 *.tlh
+TestResults/
+Packages/
