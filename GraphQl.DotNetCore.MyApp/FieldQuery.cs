@@ -15,6 +15,18 @@ namespace GraphQl.DotNetCore.MyApp
         {
             Field<ListGraphType<FieldType>>("fields",
                 resolve : context=> scoreCardRepository.GetFields());
+
+            Field<FieldType>(
+       "fieldById",
+       arguments: new QueryArguments(
+         new QueryArgument<IdGraphType> { Name = "id" }
+       ),
+       resolve: context =>
+       {
+           var id = context.GetArgument<int>("id");
+           return scoreCardRepository.GetFields().FirstOrDefault(x => x.Id == id);
+       });
+
         }
         [GraphQLMetadata("fieldById")]
         public Fields GetDroid(int id)
