@@ -15,7 +15,9 @@ namespace GraphQl.DotNetCore.MyApp
             Field(f => f.IsActive);
             Field(f => f.LastModifiedDate, nullable: true);
             Field(f => f.CreatedBy);
-            Field(f => f.QuadrantNavigation);
+            Field(name: "QuadrantNavigation",
+            type: typeof(QuadrantNavigationType),
+            resolve: context => context.Source.QuadrantNavigation);
             //Field(f => f.CreatedDate, nullable: true, type: typeof(DateTimeGraphType));
             Field(f => f.LastModifiedBy);
         }

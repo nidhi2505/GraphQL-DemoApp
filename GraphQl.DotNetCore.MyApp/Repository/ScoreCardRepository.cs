@@ -17,7 +17,7 @@ namespace GraphQl.DotNetCore.MyApp.Repository
         public List<Fields> GetFields()
         {
 
-            return _context.Fields.ToList();
+            return _context.Fields.Include(x=>x.QuadrantNavigation).ToList();
         }
     }
 }

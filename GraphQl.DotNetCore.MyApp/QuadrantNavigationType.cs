@@ -13,7 +13,7 @@ namespace GraphQl.DotNetCore.MyApp
         {
             Field(x => x.Id);
             Field(x => x.Name);
-            Field(x => x.IsActive);
+            Field(x => x.IsActive ,nullable: true);
             Field(x => x.FieldType);
             Field(x => x.TeamType);
         }
